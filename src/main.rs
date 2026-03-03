@@ -1,13 +1,11 @@
-mod Network;
-use Network::scanner;
+mod network; 
+use network::scanner;
 
 fn main() {
     println!("=== Monitor de Red Iniciando ===");
     
-    // Llamamos a la función dentro de la carpeta externa
-    let dispositivos = network::scanner::obtener_info_red();
-    
-    // Aquí es donde pasamos los datos a la "interfaz"
+    // Llamamos a la función directamente
+    let dispositivos = scanner::obtener_info_red();
     mostrar_en_interfaz(dispositivos);
 }
 
